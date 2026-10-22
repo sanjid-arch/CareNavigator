@@ -1,0 +1,551 @@
+// =============================================================================
+// CareNavigator — Canonical Relational Database Schema (Prisma ORM)
+// Supports local SQLite out-of-the-box (`file:./dev.db`) and PostgreSQL in prod.
+// Every seeded fixture includes `isSeedFixture` to distinguish fixtures from live user data.
+// =============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  name          String
+  role          String   @default("PATIENT") // PATIENT | CLINICIAN | ADMIN
+  mrn           String?  @unique
+  title         String?
+  specialty     String?
+  npiNumber     String?
+  avatarUrl     String?
+  passwordHash  String?
+  isSeedFixture Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  patientProfile      PatientProfile?
+  clinicianReviews    ClinicianReview[]
+  reviewDecisions     ReviewDecision[]
+  notifications       Notification[]
+  consentPreferences  ConsentPreference?
+  auditLogs           AuditLog[]
+  passwordResetTokens PasswordResetToken[]
+}
+
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  tokenHash String    @unique
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+}
+
+model PatientProfile {
+  id                    String   @id @default(cuid())
+  userId                String   @unique
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dateOfBirth           String
+  age                   Int
+  sex                   String
+  bloodType             String
+  primaryCarePhysician  String
+  insuranceProvider     String
+  insuranceMemberId     String
+  emergencyContactName  String?
+  emergencyContactPhone String?
+  lastSyncedAt          DateTime @default(now())
+  isSeedFixture         Boolean  @default(false)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  vitalSigns     VitalSign[]
+  conditions     MedicalCondition[]
+  medications    Medication[]
+  allergies      Allergy[]
+  documents      MedicalDocument[]
+  prescriptions  Prescription[]
+  testReports    TestReport[]
+  uploadedMedia  UploadedMedia[]
+  triageSessions TriageSession[]
+  careReferrals  CareReferral[]
+  appointments   Appointment[]
+  followUpRecords FollowUpRecord[]
+}
+
+model VitalSign {
+  id               String         @id @default(cuid())
+  patientProfileId String
+  patientProfile   PatientProfile @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  bloodPressure    String
+  heartRateBpm     Int
+  spO2Percent      Int
+  weightLbs        Float
+  temperatureF     Float          @default(98.6)
+  recordedAt       DateTime       @default(now())
+  isSeedFixture    Boolean        @default(false)
+}
+
+model MedicalCondition {
+  id               String         @id @default(cuid())
+  patientProfileId String
+  patientProfile   PatientProfile @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  name             String
+  status           String         @default("ACTIVE") // ACTIVE | CONTROLLED | RESOLVED
+  severity         String         @default("MODERATE")
+  diagnosedDate    String?
+  notes            String?
+  isSeedFixture    Boolean        @default(false)
+}
+
+model Medication {
+  id               String         @id @default(cuid())
+  patientProfileId String
+  patientProfile   PatientProfile @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  name             String
+  dosage           String
+  frequency        String
+  prescribedBy     String?
+  status           String         @default("ACTIVE") // ACTIVE | PRN | DISCONTINUED
+  isSeedFixture    Boolean        @default(false)
+}
+
+model Prescription {
+  id               String         @id @default(cuid())
+  patientProfileId String
+  patientProfile   PatientProfile @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  rxNumber         String         @unique
+  medicationName   String
+  dosage           String
+  frequency        String
+  instructions     String?
+  prescriberName   String
+  pharmacyName     String?
+  refillsRemaining Int            @default(2)
+  status           String         @default("ACTIVE") // ACTIVE | EXPIRED | DISCONTINUED
+  prescribedDate   DateTime       @default(now())
+  expiresAt        DateTime
+  isSeedFixture    Boolean        @default(false)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+}
+
+model Allergy {
+  id               String         @id @default(cuid())
+  patientProfileId String
+  patientProfile   PatientProfile @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  substance        String
+  reaction         String
+  severity         String         @default("SEVERE") // MILD | MODERATE | SEVERE | ANAPHYLAXIS
+  isSeedFixture    Boolean        @default(false)
+}
+
+model MedicalDocument {
+  id                   String               @id @default(cuid())
+  patientProfileId     String
+  patientProfile       PatientProfile       @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  title                String
+  category             String               @default("LAB_RESULTS") // LAB_RESULTS | IMAGING | DISCHARGE_SUMMARY | CONSULT_NOTE | CLINICAL_PHOTO | SUPPLEMENTAL
+  fileName             String
+  mimeType             String
+  fileSizeBytes        Int
+  storageKey           String
+  orderingClinician    String?
+  facilityName         String?
+  ocrStatus            String               @default("COMPLETE") // PENDING | COMPLETE | FAILED
+  aiPlainSummary       String?
+  clinicalObservations String?
+  uploadedAt           DateTime             @default(now())
+  isSeedFixture        Boolean              @default(false)
+  biomarkers           ExtractedBiomarker[]
+}
+
+model ExtractedBiomarker {
+  id             String          @id @default(cuid())
+  documentId     String
+  document       MedicalDocument @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  name           String
+  value          String
+  unit           String
+  referenceRange String
+  flag           String          @default("NORMAL") // NORMAL | SLIGHTLY_ELEVATED | ELEVATED | CRITICAL
+  interpretation String?
+  isSeedFixture  Boolean         @default(false)
+}
+
+model TestReport {
+  id               String         @id @default(cuid())
+  patientProfileId String
+  patientProfile   PatientProfile @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  testName         String
+  panelCategory    String         // BIOCHEMISTRY | HEMATOLOGY | RADIOLOGY | MICROBIOLOGY
+  specimenType     String?
+  orderingProvider String
+  performingLab    String
+  collectedAt      DateTime       @default(now())
+  reportedAt       DateTime       @default(now())
+  overallResult    String         @default("NORMAL") // NORMAL | ABNORMAL | CRITICAL
+  clinicalSummary  String?
+  pdfStorageKey    String?
+  isSeedFixture    Boolean        @default(false)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+}
+
+model ClinicalGuideline {
+  id                 String           @id @default(cuid())
+  code               String           @unique
+  title              String
+  organization       String
+  publisher          String?
+  version            String           @default("1.0")
+  status             String           @default("ACTIVE") // ACTIVE | RETIRED | SUPERSEDED
+  publicationYear    Int
+  publicationDate    String?
+  reviewDate         String?
+  specialty          String
+  summary            String
+  keyRecommendations String
+  sourceReference    String
+  sourceUrl          String?
+  supersededById     String?
+  retirementReason   String?
+  keywords           String
+  isSeedFixture      Boolean          @default(false)
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @default(now()) @updatedAt
+
+  chunks             GuidelineChunk[]
+  citations          TriageCitation[]
+}
+
+model GuidelineChunk {
+  id           String            @id @default(cuid())
+  guidelineId  String
+  guideline    ClinicalGuideline @relation(fields: [guidelineId], references: [id], onDelete: Cascade)
+  chunkIndex   Int
+  sectionTitle String
+  sectionNumber String?
+  pageNumber   Int?
+  passageText  String
+  keywordsJson String            @default("[]")
+  tokenCount   Int               @default(0)
+  createdAt    DateTime          @default(now())
+
+  citations    TriageCitation[]
+}
+
+model TriageSession {
+  id                     String           @id @default(cuid())
+  sessionCode            String           @unique
+  patientProfileId       String
+  patientProfile         PatientProfile   @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  chiefComplaint         String
+  status                 String           @default("IN_PROGRESS") // DRAFT | IN_PROGRESS | PENDING_REVIEW | ACTION_REQUIRED | VERIFIED | FAILED | CANCELLED
+  acuityLevel            String           @default("ROUTINE") // SELF_CARE | ROUTINE | URGENT | EMERGENCY
+  confidenceScore        Int              @default(90)
+  recommendedCareSetting String
+  plainLanguageSummary   String
+  includeEhrContext      Boolean          @default(true)
+  redFlagTriggered       Boolean          @default(false)
+  redFlagReasonsJson     String           @default("[]")
+  extractedEntitiesJson  String           @default("{}")
+  differentialJson       String           @default("[]")
+  visitPrepQuestionsJson String           @default("[]")
+  voiceTranscript        String?
+  isSeedFixture          Boolean          @default(false)
+  createdAt              DateTime         @default(now())
+  updatedAt              DateTime         @updatedAt
+  completedAt            DateTime?
+
+  messages        TriageMessage[]
+  citations       TriageCitation[]
+  clinicianReview ClinicianReview?
+  answers         AssessmentAnswer[]
+  explanations    AssessmentExplanation[]
+  statusHistory   AssessmentStatusHistory[]
+  uploadedMedia   UploadedMedia[]
+  careReferrals   CareReferral[]
+  appointments    Appointment[]
+  followUpRecords FollowUpRecord[]
+}
+
+model AssessmentAnswer {
+  id             String        @id @default(cuid())
+  sessionId      String
+  session        TriageSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  stepNumber     Int
+  questionKey    String
+  questionPrompt String
+  answerValue    String
+  isSeedFixture  Boolean       @default(false)
+  createdAt      DateTime      @default(now())
+}
+
+model AssessmentExplanation {
+  id             String        @id @default(cuid())
+  sessionId      String
+  session        TriageSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  factorType     String        // PRIMARY_SYMPTOM | RISK_MODIFIER | PERTINENT_NEGATIVE | GUIDELINE_MATCH
+  factorLabel    String
+  rationale      String
+  importanceRank Int           @default(1)
+  isSeedFixture  Boolean       @default(false)
+  createdAt      DateTime      @default(now())
+}
+
+model AssessmentStatusHistory {
+  id               String        @id @default(cuid())
+  sessionId        String
+  session          TriageSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  fromStatus       String
+  toStatus         String
+  transitionReason String?
+  changedByUserId  String?
+  createdAt        DateTime      @default(now())
+}
+
+model UploadedMedia {
+  id                 String         @id @default(cuid())
+  patientProfileId   String
+  patientProfile     PatientProfile @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  triageSessionId    String?
+  triageSession      TriageSession? @relation(fields: [triageSessionId], references: [id], onDelete: SetNull)
+  fileName           String
+  fileSizeBytes      Int
+  mimeType           String
+  storageKey         String
+  modality           String         // CLINICAL_IMAGE | VOICE_RECORDING | LAB_DOCUMENT
+  processingStatus   String         @default("QUEUED") // QUEUED | EXTRACTING | ANALYZED | FAILED
+  processingProgress Int            @default(0) // 0 - 100
+  extractedSummary   String?
+  extractedDataJson  String?        @default("{}")
+  errorMessage       String?
+  isSeedFixture      Boolean        @default(false)
+  createdAt          DateTime       @default(now())
+  updatedAt          DateTime       @updatedAt
+}
+
+model TriageMessage {
+  id           String        @id @default(cuid())
+  sessionId    String
+  session      TriageSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  sender       String        // AI | PATIENT | SYSTEM
+  content      String
+  metadataJson String?
+  createdAt    DateTime      @default(now())
+}
+
+model TriageCitation {
+  id                 String            @id @default(cuid())
+  sessionId          String
+  session            TriageSession     @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  guidelineId        String
+  guideline          ClinicalGuideline @relation(fields: [guidelineId], references: [id], onDelete: Cascade)
+  chunkId            String?
+  chunk              GuidelineChunk?   @relation(fields: [chunkId], references: [id], onDelete: SetNull)
+  passageText        String?
+  sectionTitle       String?
+  sectionNumber      String?
+  pageNumber         Int?
+  sourceUrl          String?
+  verificationStatus String            @default("VERIFIED") // VERIFIED | REJECTED | UNVERIFIED_SOURCE | EVIDENCE_UNAVAILABLE
+  relevanceScore     Float             @default(1.0)
+  relevanceNote      String
+  claimSupported     String?
+  createdAt          DateTime          @default(now())
+}
+
+model ClinicianReview {
+  id                   String           @id @default(cuid())
+  sessionId            String           @unique
+  session              TriageSession    @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  clinicianId          String
+  clinician            User             @relation(fields: [clinicianId], references: [id])
+  stage                String           @default("REVIEWING") // AI_GENERATED | QUEUED | REVIEWING | SIGNED
+  concordanceStatus    String           @default("PENDING") // PENDING | AGREED | OVERRIDDEN_HIGHER | OVERRIDDEN_LOWER
+  overriddenAcuity     String?
+  clinicianNote        String?
+  actionRequiredNote   String?
+  requestedFileType    String?
+  supplementalDocId    String?
+  reviewLatencySeconds Int              @default(194)
+  signedAt             DateTime?
+  updatedAt            DateTime         @updatedAt
+  isSeedFixture        Boolean          @default(false)
+  reviewDecisions      ReviewDecision[]
+}
+
+model ReviewDecision {
+  id               String          @id @default(cuid())
+  reviewId         String
+  review           ClinicianReview @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  clinicianUserId  String
+  clinicianUser    User            @relation(fields: [clinicianUserId], references: [id])
+  decisionType     String          // CONCURRED | OVERRIDDEN | CLARIFICATION_REQUESTED | CARE_PLAN_SIGNED
+  previousStage    String?
+  newStage         String
+  overriddenAcuity String?
+  rationale        String
+  isSeedFixture    Boolean         @default(false)
+  createdAt        DateTime        @default(now())
+}
+
+model DoctorProfile {
+  id                     String             @id @default(cuid())
+  name                   String
+  credentials            String
+  specialty              String
+  subspecialty           String?
+  npiNumber              String             @unique
+  hospitalAffiliation    String
+  locationAddress        String
+  city                   String
+  state                  String
+  zipCode                String
+  region                 String             @default("San Francisco Bay Area")
+  latitude               Float
+  longitude              Float
+  distanceMiles          Float
+  rating                 Float
+  reviewCount            Int
+  triageMatchPercent     Int
+  acceptedInsurancesJson String             @default("[]")
+  telehealthAvailable    Boolean            @default(true)
+  availableToday         Boolean            @default(true)
+  inNetworkHospital      Boolean            @default(true)
+  consultationFee        Int                @default(150)
+  bio                    String
+  isSeedFixture          Boolean            @default(false)
+  availabilitySlots      AvailabilitySlot[]
+  careReferrals          CareReferral[]
+  appointments           Appointment[]
+}
+
+model CareReferral {
+  id               String         @id @default(cuid())
+  referralCode     String         @unique
+  patientProfileId String
+  patientProfile   PatientProfile @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  doctorId         String
+  doctor           DoctorProfile  @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  triageSessionId  String?
+  triageSession    TriageSession? @relation(fields: [triageSessionId], references: [id], onDelete: SetNull)
+  specialtyNeeded  String
+  urgency          String         @default("ROUTINE") // ROUTINE | URGENT | EMERGENCY
+  clinicalSummary  String
+  referralStatus   String         @default("PENDING") // PENDING | ACCEPTED | SCHEDULED | COMPLETED | DECLINED
+  appointmentDate  DateTime?
+  isSeedFixture    Boolean        @default(false)
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+}
+
+model AvailabilitySlot {
+  id            String        @id @default(cuid())
+  doctorId      String
+  doctor        DoctorProfile @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  label         String
+  startsAt      DateTime
+  modality      String        @default("TELEHEALTH") // TELEHEALTH | IN_PERSON
+  isBooked      Boolean       @default(false)
+  isSeedFixture Boolean       @default(false)
+  appointments  Appointment[]
+}
+
+model Appointment {
+  id               String            @id @default(cuid())
+  patientProfileId String
+  patientProfile   PatientProfile    @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  doctorId         String
+  doctor           DoctorProfile     @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  slotId           String?
+  slot             AvailabilitySlot? @relation(fields: [slotId], references: [id])
+  triageSessionId  String?
+  triageSession    TriageSession?    @relation(fields: [triageSessionId], references: [id])
+  reason           String
+  modality         String            @default("TELEHEALTH") // TELEHEALTH | IN_PERSON
+  status           String            @default("UPCOMING") // UPCOMING | COMPLETED | CANCELLED
+  scheduledAt      DateTime
+  preVisitNotes    String?
+  isSeedFixture    Boolean           @default(false)
+  createdAt        DateTime          @default(now())
+}
+
+model FollowUpRecord {
+  id                String         @id @default(cuid())
+  patientProfileId  String
+  patientProfile    PatientProfile @relation(fields: [patientProfileId], references: [id], onDelete: Cascade)
+  triageSessionId   String?
+  triageSession     TriageSession? @relation(fields: [triageSessionId], references: [id], onDelete: SetNull)
+  title             String
+  targetDate        DateTime
+  status            String         @default("SCHEDULED") // SCHEDULED | COMPLETED | MISSED | CANCELLED
+  clinicalObjective String
+  outcomeNotes      String?
+  isSeedFixture     Boolean        @default(false)
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+}
+
+model Notification {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category      String   // clinical | appointment | reminder | record
+  title         String
+  body          String
+  actionLabel   String?
+  actionHref    String?
+  isRead        Boolean  @default(false)
+  isDismissed   Boolean  @default(false)
+  isSeedFixture Boolean  @default(false)
+  createdAt     DateTime @default(now())
+}
+
+model ConsentPreference {
+  id                           String   @id @default(cuid())
+  userId                       String   @unique
+  user                         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  includeEhrContext            Boolean  @default(true)
+  storeVoiceTranscripts        Boolean  @default(true)
+  deidentifiedModelImprovement Boolean  @default(false)
+  automatedHieSync             Boolean  @default(true)
+  commCriticalEmail            Boolean  @default(true)
+  commCriticalSms              Boolean  @default(true)
+  commCriticalPush             Boolean  @default(true)
+  commReviewEmail              Boolean  @default(true)
+  commReviewSms                Boolean  @default(true)
+  commReviewPush               Boolean  @default(true)
+  commAppointmentEmail         Boolean  @default(true)
+  commAppointmentSms           Boolean  @default(true)
+  commAppointmentPush          Boolean  @default(false)
+  commPreventiveEmail          Boolean  @default(true)
+  commPreventiveSms            Boolean  @default(false)
+  commPreventivePush           Boolean  @default(false)
+  updatedAt                    DateTime @updatedAt
+}
+
+model AuditLog {
+  id                   String   @id @default(cuid())
+  auditCode            String   @unique
+  actorUserId          String?
+  actor                User?    @relation(fields: [actorUserId], references: [id], onDelete: SetNull)
+  actorRole            String
+  actionType           String   // TRIAGE_CREATED | HIGH_RISK_ESCALATION | CLINICIAN_SIGN_OFF | CLINICIAN_OVERRIDE | CONSENT_UPDATED | DOCUMENT_UPLOADED | ARCHIVE_EXPORTED | ACCOUNT_PURGE_REQUESTED | AUTH_ROLE_SWITCH | AUTH_REGISTER | AUTH_LOGIN | AUTH_LOGOUT | AUTH_PASSWORD_RESET
+  targetEntityType     String
+  targetEntityId       String
+  anonymizedPatientRef String?
+  aiAcuity             String?
+  finalAcuity          String?
+  latencySeconds       Int?
+  metadataJson         String   @default("{}")
+  isSeedFixture        Boolean  @default(false)
+  createdAt            DateTime @default(now())
+}
