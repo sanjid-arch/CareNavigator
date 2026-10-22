@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error": "#ba1a1a", "on-primary": "#ffffff", "inverse-surface": "#1f3241", "on-primary-container": "#effdff", "background": "#f6f9ff", "on-tertiary-fixed-variant": "#004f55", "secondary-container": "#80b6fe", "inverse-primary": "#79d4e2", "tertiary-container": "#008089", "on-tertiary": "#ffffff", "surface-container-high": "#d6ebfe", "surface-container-highest": "#d1e5f8", "primary-fixed": "#95f1ff", "inverse-on-surface": "#e6f2ff", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "primary": "#00646f", "surface-tint": "#006874", "on-secondary": "#ffffff", "on-tertiary-container": "#effeff", "error-container": "#ffdad6", "tertiary-fixed": "#82f3ff", "tertiary-fixed-dim": "#57d8e4", "on-secondary-container": "#004681", "secondary-fixed-dim": "#a4c9ff", "surface": "#f6f9ff", "on-secondary-fixed-variant": "#004883", "on-background": "#091d2b", "primary-container": "#087f8c", "on-surface-variant": "#3e494a", "surface-dim": "#c8dcf0", "on-secondary-fixed": "#001c39", "on-primary-fixed": "#001f24", "secondary": "#2060a3", "on-tertiary-fixed": "#002022", "on-surface": "#091d2b", "tertiary": "#00656c", "surface-bright": "#f6f9ff", "outline-variant": "#bdc9ca", "surface-container": "#e1f0ff", "secondary-fixed": "#d4e3ff", "on-error-container": "#93000a", "on-primary-fixed-variant": "#004f57", "surface-container-low": "#ecf5ff", "surface-variant": "#d1e5f8", "primary-fixed-dim": "#79d4e2", "outline": "#6e797b" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "gutter-sm": "1rem", "gutter": "1.5rem", "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "2rem", "space-lg": "1.5rem", "margin-mobile": "1rem", "margin": "2rem" }, "fontFamily": { "body-sm": ["Inter"], "title-md": ["Inter"], "label-md": ["Inter"], "label-sm": ["Inter"], "headline-lg": ["Inter"], "headline-md": ["Inter"], "display": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "label-lg": ["Inter"] }, "fontSize": { "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "0", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col border-r border-outline-variant/30"><div class="h-16 flex items-center gap-space-sm px-space-lg border-b border-outline-variant/20"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-[20px]">health_and_safety</span></div><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface tracking-tight leading-none">CareNavigator</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Clinical Platform</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Clinical Workspace</div></div><nav class="flex-1 px-space-sm space-y-1 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="ai-health-assessment" href="#"><span class="material-symbols-outlined text-[20px]">psychology</span><span>AI Health Assessment</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="media-and-voice" href="#"><span class="material-symbols-outlined text-[20px]">mic</span><span>Media & Voice</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="find-a-doctor" href="#"><span class="material-symbols-outlined text-[20px]">person_search</span><span>Find a Doctor</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="medical-records" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Medical Records</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="assessment-history" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span>Assessment History</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="appointments" href="#"><span class="material-symbols-outlined text-[20px]">calendar_today</span><span>Appointments</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant font-label-lg text-label-lg hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav><div class="p-space-md border-t border-outline-variant/20"><div class="bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[20px]">verified_user</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface">HIPAA Compliant</span><span class="font-label-sm text-[10px] text-on-surface-variant leading-none">256-bit Encrypted</span></div></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 z-40 px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-xs font-label-md text-label-md"><span class="text-on-surface-variant">Assessment</span><span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span><span class="text-primary font-title-md text-title-md">Media & Voice</span></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">search</span><input class="w-64 h-10 pl-9 pr-4 rounded-lg bg-surface-container-low border border-outline-variant/40 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container" placeholder="Search records, vitals, doctors..." type="text"/></div><button aria-label="Notifications" class="relative w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><button aria-label="Help" class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><div class="h-6 w-[1px] bg-outline-variant/30"></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight">Dr. Sarah Lin</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Attending Clinician</span></div></div></div></header><main class="w-full pt-16 bg-background flex-1 px-gutter py-gutter"><div class="flex flex-col w-full">
+<!-- Top Workspace Context & Tabs -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-primary mb-1 uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Multimodal Intake Module • Encounter #CN-88412</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Media & Voice Assessment</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Secure multimodal intake for clinical triage review and assessment enrichment.</p>
+</div>
+<div class="flex items-center gap-space-xs self-start md:self-auto bg-surface-container-low px-space-sm py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-primary">lock</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">TLS 1.3 / AES-256 Session Encrypted</span>
+</div>
+</div>
+<!-- Navigation Tabs Bar -->
+<div class="mt-space-md border-b border-outline-variant/30 flex items-center gap-space-md">
+<button class="relative pb-3 flex items-center gap-2 font-title-md text-title-md text-primary font-semibold transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+<span>Media Upload</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-primary-container text-on-primary ml-1">3 files</span>
+<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-container rounded-t-full"></span>
+</button>
+<button class="relative pb-3 flex items-center gap-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+<span>Voice Conversation</span>
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+</button>
+<button class="relative pb-3 flex items-center gap-2 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[20px]">chat_paste_go</span>
+<span>Text Assessment</span>
+</button>
+</div>
+</div>
+<!-- 2-Column Desktop Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Primary Upload & Documentation Workspace (~65% width) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Mandatory Clinical Disclaimer Banner -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-start gap-space-sm border-l-4 border-primary shadow-sm">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5 shrink-0">info</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold uppercase tracking-wider">Clinical Intake Protocol Notice</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Image analysis is not a validated medical interpretation. All uploaded media serves as supplementary observational data for clinician review and triage support. Never rely on automated processing for emergency conditions.
+          </p>
+</div>
+</div>
+<!-- Drag-and-Drop Area -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl flex flex-col items-center justify-center text-center border-2 border-dashed border-tertiary-container/40 hover:border-primary transition-colors cursor-pointer group shadow-sm">
+<div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-space-sm group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">upload_file</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">
+          Drag and drop medical photos, skin lesions, lab documents, or symptom media here
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-xl">
+          Accepted formats: DICOM, JPEG, PNG, PDF • Max file size: 25MB per file • End-to-end encrypted
+        </p>
+<div class="mt-space-md flex items-center gap-space-sm">
+<button class="px-space-lg h-10 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-90 active:scale-[0.99] transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">add_photo_alternate</span>
+<span>Browse Files</span>
+</button>
+<button class="px-space-md h-10 rounded-lg bg-surface-container-low text-on-surface-variant font-label-lg text-label-lg hover:text-on-surface transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<span>Capture with Camera</span>
+</button>
+</div>
+</div>
+<!-- Uploaded Files Section -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span>Encounter Attachments</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-medium">3 items queued</span>
+</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Validated against DICOM / HIPAA standards</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- File Item 1: Processing Dermatology Image -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md hover:shadow transition-shadow">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A focused close-up medical photograph of a localized mild erythematous dermatological skin rash on a patient lateral forearm, clinical lighting, sterile clinical context, soft natural focus, accurate diagnostic reference style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDFcCNI_PsO0ONysNyeytJkMXG_Fj_SSK3dk--WbbujNeZeL2EIrY2tqiWR63kmqZK5_frC-og4jWMDRj9m-SGDGrMOXLPrHBMiXam4-AuK6nPKY-4cXAjGa9Lhb3D3dbQB_fbkOXnDUM58w91fx0iOrMO82EL_scxS8wliFWhfIp8eQABWsldGa_cCEYuH5G4qOTDi9B06rAI_imFs_N1Cob3DlkBfTq2b9y2rfWTHsbjsuDXtxUuCA"/>
+<span class="absolute bottom-0 right-0 bg-primary-container text-on-primary p-0.5 rounded-tl text-[10px] leading-none">
+<span class="material-symbols-outlined text-[12px]">image</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface truncate">skin_rash_lateral_forearm.png</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant shrink-0">• 4.2 MB</span>
+</div>
+<div class="flex items-center gap-2 mt-1.5">
+<div class="w-36 h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary-container rounded-full animate-pulse" style="width: 78%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">78%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end w-full md:w-auto gap-space-md shrink-0">
+<!-- Processing Status Chip -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] animate-spin">sync</span>
+<span>Processing</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Replace file" type="button">
+<span class="material-symbols-outlined text-[18px]">change_circle</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors" title="Remove attachment" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- File Item 2: Ready Document -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md hover:shadow transition-shadow">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="w-14 h-14 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[28px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface truncate">blood_panel_lab_results.pdf</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant shrink-0">• 1.8 MB</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container">verified</span>
+<span>Metadata extracted • 4 pages verified</span>
+</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end w-full md:w-auto gap-space-md shrink-0">
+<!-- Ready Status Chip -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-low text-primary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Ready</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Preview</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors" title="Remove attachment" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- File Item 3: Error State -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md border-l-4 border-error">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<div class="w-14 h-14 rounded-lg bg-error-container/40 flex items-center justify-center shrink-0 text-error">
+<span class="material-symbols-outlined text-[28px]">broken_image</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface line-through decoration-error/60 truncate">chest_xray_scan_damaged.raw</span>
+<span class="font-body-sm text-body-sm text-error shrink-0">• 32.4 MB</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-error">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span class="font-label-sm text-label-sm font-medium">Exceeds 25MB size limit • Unsupported RAW binary encoding</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end w-full md:w-auto gap-space-md shrink-0">
+<!-- Failed Status Chip -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+<span>Failed</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Retry</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/40 transition-colors" title="Remove attachment" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Media Description & Clinical Symptom Context Input -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-2" for="clinical-notes-input">
+<span>Describe the uploaded media and symptoms observed</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">(Optional)</span>
+</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant tabular-nums">124 / 1000 characters</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Provide contextual timing, anatomical location, severity progression, and prior treatments attempted to guide triage prioritization.
+        </p>
+<div class="relative mt-1">
+<textarea class="w-full rounded-lg bg-surface-container-lowest border border-outline-variant/60 p-space-sm text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container/30 focus:border-primary-container resize-y transition-all" id="clinical-notes-input" placeholder="e.g., Rash appeared 3 days ago on left forearm, mild itching, no fever. Lab document shows routine metabolic panel from last Tuesday." rows="4">Rash appeared 3 days ago on left forearm, mild itching, no fever reported. Patient notes progressive expansion following outdoor activity. Topicals ineffective.</textarea>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">auto_awesome</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">CareNavigator NLP will extract relevant clinical concepts during clinician handoff.</span>
+</div>
+</div>
+<!-- Storage, Consent, & HIPAA Compliance Section -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">policy</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-title-md text-title-md text-on-surface">Encrypted Storage & Privacy Consent</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">HIPAA • HITECH</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+              Files are stored in HIPAA-compliant AES-256 encrypted storage and accessible solely by authorized triage clinicians and diagnostic AI support models. De-identification protocols apply before computational feature extraction.
+            </p>
+</div>
+</div>
+<label class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-low/60 cursor-pointer hover:bg-surface-container-low transition-colors">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary-container focus:ring-primary-container/30 border-outline-variant/60 accent-primary-container shrink-0" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface leading-snug">
+            I confirm that I have the right to submit these files and consent to their processing for clinical triage decision-support and practitioner workflow integration.
+          </span>
+</label>
+</div>
+</div>
+<!-- RIGHT COLUMN: Assessment Review Panel (~35% width, Sticky Desktop) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-20">
+<!-- Review Panel Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-lg">
+<!-- Panel Header -->
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+<h2 class="font-title-md text-title-md text-on-surface">Assessment Review Panel</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-low text-primary font-label-sm text-label-sm font-medium">Session #29</span>
+</div>
+<!-- Status Summary Bar -->
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">File Intake Health</span>
+<div class="grid grid-cols-2 gap-2">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold leading-none">1 Ready</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Validated</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-primary animate-spin">sync</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold leading-none">1 Processing</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Derm model</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-error-container/30">
+<span class="material-symbols-outlined text-[16px] text-error">cancel</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-error font-semibold leading-none">1 Failed</span>
+<span class="font-label-sm text-[10px] text-on-error-container">Format/Size</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[16px] text-outline">hourglass_empty</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold leading-none">0 Awaiting</span>
+<span class="font-label-sm text-[10px] text-outline">Confirmation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Associated Voice / Transcript Section -->
+<div class="flex flex-col gap-2 pt-2 border-t border-outline-variant/20">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">record_voice_over</span>
+<span>Linked Voice Memo</span>
+</span>
+<span class="font-label-sm text-label-sm text-tertiary-container font-medium">Synced</span>
+</div>
+<!-- Waveform Player Card -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-space-sm">
+<button class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm hover:opacity-90 transition-opacity shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+<!-- Waveform SVG Simulation -->
+<div class="flex items-center gap-0.5 flex-1 h-6">
+<span class="w-1 bg-primary-container h-3 rounded-full"></span>
+<span class="w-1 bg-primary-container h-5 rounded-full"></span>
+<span class="w-1 bg-primary-container h-2 rounded-full"></span>
+<span class="w-1 bg-primary-container h-6 rounded-full"></span>
+<span class="w-1 bg-primary-container h-4 rounded-full"></span>
+<span class="w-1 bg-primary-container h-5 rounded-full"></span>
+<span class="w-1 bg-primary-container h-3 rounded-full"></span>
+<span class="w-1 bg-outline-variant/60 h-4 rounded-full"></span>
+<span class="w-1 bg-outline-variant/60 h-2 rounded-full"></span>
+<span class="w-1 bg-outline-variant/60 h-5 rounded-full"></span>
+<span class="w-1 bg-outline-variant/60 h-3 rounded-full"></span>
+<span class="w-1 bg-outline-variant/60 h-1.5 rounded-full"></span>
+<span class="w-1 bg-outline-variant/60 h-4 rounded-full"></span>
+<span class="w-1 bg-outline-variant/60 h-2 rounded-full"></span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant tabular-nums shrink-0">00:42 / 01:15</span>
+</div>
+<!-- Transcript Snippet -->
+<div class="bg-surface-container-lowest p-2 rounded text-[12px] text-on-surface-variant font-body-sm leading-relaxed border-l-2 border-primary-container/60">
+<span class="font-semibold text-on-surface">Patient Speech Transcript:</span>
+              “The redness started around my wrist and spread upward over 48 hours. Applying hydrocortisone didn’t reduce swelling...”
+            </div>
+</div>
+</div>
+<!-- Included Validated Attachments -->
+<div class="flex flex-col gap-2 pt-2 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Included Attachments (Ready)</span>
+<ul class="flex flex-col gap-1.5">
+<li class="flex items-center justify-between text-body-sm font-body-sm text-on-surface p-1.5 rounded hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]">check</span>
+<span class="truncate">blood_panel_lab_results.pdf</span>
+</div>
+<span class="text-on-surface-variant font-label-sm text-label-sm shrink-0">1.8 MB</span>
+</li>
+<li class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant p-1.5 rounded bg-surface-container-low/40">
+<div class="flex items-center gap-2 truncate">
+<span class="material-symbols-outlined text-primary text-[16px]">timelapse</span>
+<span class="truncate">skin_rash_lateral_forearm.png</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm shrink-0">Queued</span>
+</li>
+</ul>
+</div>
+<!-- Clinical Note Brief -->
+<div class="flex flex-col gap-1 pt-2 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Recorded Notes</span>
+<p class="font-body-sm text-body-sm text-on-surface bg-surface-container-low/50 p-2.5 rounded-lg italic line-clamp-3">
+            “Rash appeared 3 days ago on left forearm, mild itching, no fever reported. Progressive expansion following outdoor activity.”
+          </p>
+</div>
+<!-- Triage Action Buttons -->
+<div class="flex flex-col gap-space-xs pt-2">
+<button class="w-full h-11 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-90 active:scale-[0.99] transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Submit for Triage Review</span>
+</button>
+<button class="w-full h-10 rounded-lg bg-surface-container-lowest border border-outline-variant/50 text-on-surface font-label-lg text-label-lg hover:bg-surface-container-low transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+<span>Save Draft & Continue Later</span>
+</button>
+</div>
+<!-- Footnote & Protocol Badge -->
+<div class="pt-space-sm border-t border-outline-variant/20 flex flex-col items-center text-center gap-1">
+<div class="flex items-center gap-1 text-[11px] font-label-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>Decision-support tool, not a replacement for a doctor.</span>
+</div>
+<span class="text-[10px] text-on-surface-variant">Validated against Clinical Triage Protocol V4.2</span>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

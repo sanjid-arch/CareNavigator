@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-fixed-dim":"#79d4e2","secondary-container":"#80b6fe","inverse-surface":"#1f3241","primary-fixed":"#95f1ff","on-surface-variant":"#3e494a","error":"#ba1a1a","on-primary-fixed-variant":"#004f57","primary":"#00646f","surface-variant":"#d1e5f8","surface-container-high":"#d6ebfe","on-primary-container":"#effdff","tertiary-fixed":"#82f3ff","on-tertiary-container":"#effeff","on-surface":"#091d2b","surface-bright":"#f6f9ff","outline-variant":"#bdc9ca","inverse-on-surface":"#e6f2ff","tertiary-container":"#008089","on-background":"#091d2b","secondary":"#2060a3","tertiary-fixed-dim":"#57d8e4","surface-dim":"#c8dcf0","on-secondary-fixed":"#001c39","inverse-primary":"#79d4e2","on-primary":"#ffffff","surface-container-low":"#ecf5ff","primary-container":"#087f8c","surface-tint":"#006874","surface-container-highest":"#d1e5f8","background":"#f6f9ff","secondary-fixed-dim":"#a4c9ff","on-secondary":"#ffffff","on-tertiary-fixed":"#002022","on-primary-fixed":"#001f24","on-tertiary":"#ffffff","outline":"#6e797b","on-error":"#ffffff","on-secondary-fixed-variant":"#004883","on-secondary-container":"#004681","error-container":"#ffdad6","on-error-container":"#93000a","tertiary":"#00656c","surface-container":"#e1f0ff","surface-container-lowest":"#ffffff","secondary-fixed":"#d4e3ff","on-tertiary-fixed-variant":"#004f55","surface":"#f6f9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","margin-mobile":"1rem","space-xl":"2rem","space-sm":"0.5rem","gutter-mobile":"1rem","margin":"2rem","space-md":"1rem","gutter":"1.5rem","space-lg":"1.5rem"},"fontFamily":{"body-lg":["Inter"],"body-md":["Inter"],"headline-sm":["Inter"],"label-lg":["Inter"],"headline-xl":["Inter"],"body-sm":["Inter"],"headline-xl-mobile":["Inter"],"label-sm":["Inter"],"headline-lg":["Inter"],"label-md":["Inter"],"headline-md":["Inter"]},"fontSize":{"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[22px]">local_hospital</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">CareNavigator</span><span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Clinical Portal</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs mb-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Clinical Workspace</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="ai-triage-assessment" href="#"><span class="material-symbols-outlined text-[20px]">vital_signs</span><span>AI Triage &amp; Assessment</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="assessment-history" href="#"><span class="material-symbols-outlined text-[20px]">history_toggle_off</span><span>Assessment History</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="care-team" href="#"><span class="material-symbols-outlined text-[20px]">supervised_user_circle</span><span>Doctors &amp; Care Team</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="my-health-profile" href="#"><span class="material-symbols-outlined text-[20px]">clinical_notes</span><span>My Health Profile</span></a></nav><div class="px-space-sm py-space-xs mt-space-md mb-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Account &amp; System</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-md text-body-md" data-path="notifications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">notifications</span><span>Notifications</span></div><span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm">3</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary-container font-headline-sm" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div></div><div class="p-space-md m-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center gap-1.5 text-tertiary"><span class="material-symbols-outlined text-[16px]">lock</span><span class="font-label-sm text-label-sm uppercase">EHR Protected</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Decision-support output only. Validate with licensed clinical protocols.</p></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-space-md py-1.5 rounded-full bg-surface-container-low text-secondary font-label-md text-label-md"><span class="material-symbols-outlined text-[16px]">verified_user</span><span>HIPAA Compliant • End-to-End Encrypted</span></div><div class="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm"><span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span><span>Clinical Gateway Online</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-2 px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm"><span class="material-symbols-outlined text-[18px]">search</span><span>Search records, triage notes...</span><kbd class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm">&amp;#8984;K</kbd></div><a class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center justify-center" href="#" title="Help &amp; Support"><span class="material-symbols-outlined text-[20px]">help_outline</span></a><a class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors relative flex items-center justify-center" href="#" title="Notifications"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></a><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-space-sm pl-1"><div class="flex flex-col text-right hidden sm:block"><span class="font-label-lg text-label-lg text-on-surface leading-tight">Sarah Jenkins</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Patient</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg space-y-space-lg max-w-7xl mx-auto w-full">
+<!-- Top Header & Compliance Callout -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Settings &amp; Privacy Controls</h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Data Protection: Active (HIPAA &amp; GDPR Enforced)</span>
+</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Manage your communication preferences, clinical consent, data sharing, and security settings.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-start md:self-center">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider hidden sm:inline">Audit log:</span>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-low text-secondary font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Access History</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg hover:bg-primary transition-colors shadow-sm" onclick="saveSettingsNotification()" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save Preferences</span>
+</button>
+</div>
+</div>
+<!-- Layout: Side Navigation / Section Anchor & Content Area -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Navigation Rail (Anchors) -->
+<nav class="lg:col-span-3 bg-surface-container-lowest p-space-sm rounded-xl shadow-sm space-y-1 sticky top-20">
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-headline-sm transition-colors" href="#section-communication">
+<span class="material-symbols-outlined text-[20px]">mark_chat_unread</span>
+<span>Communication</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-body-md text-body-md transition-colors" href="#section-clinical-consent">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+<span>Clinical Consents</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-body-md text-body-md transition-colors" href="#section-authorized-team">
+<span class="material-symbols-outlined text-[20px]">share_reviews</span>
+<span>Authorized Care Team</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-body-md text-body-md transition-colors" href="#section-security">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<span>Security &amp; Auth</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface font-body-md text-body-md transition-colors" href="#section-data-rights">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+<span>Data Export &amp; Rights</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-error hover:bg-error-container hover:text-on-error-container font-body-md text-body-md transition-colors" href="#section-danger-zone">
+<span class="material-symbols-outlined text-[20px]">delete_forever</span>
+<span>Account &amp; Deletion</span>
+</a>
+<div class="pt-space-md mt-space-md bg-surface-container-low rounded-lg p-space-sm space-y-1">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Protocol Security</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Changes to triage escalation alerts require Multi-Factor re-verification.
+          </p>
+</div>
+</nav>
+<!-- Main Content Sections -->
+<div class="lg:col-span-9 space-y-space-lg min-w-0">
+<!-- SECTION 1: Communication Preferences -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-lg" id="section-communication">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Section 01</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Communication Preferences</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-2.5 py-1 rounded bg-surface-container-low self-start sm:self-auto">
+              Channels Synchronized
+            </span>
+</div>
+<!-- Notification Masking Banner / Privacy-Safe Lock -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">visibility_off</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Privacy-Safe Lock Screen Masking</h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm">Recommended</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Replaces clinical diagnostic names, triage urgency grades, and medication names with generic notifications (e.g., "CareNavigator has an update for you") across lock screen banners and SMS texts.
+                </p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" id="lock-screen-privacy" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Alert Categories Table -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Alert Routing Matrix</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Default: Mobile Push &amp; In-App Hub</span>
+</div>
+<div class="overflow-x-auto rounded-lg bg-surface-container-lowest">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md">
+<tr>
+<th class="py-3 px-4">Event Category</th>
+<th class="py-3 px-4 text-center w-24">In-App</th>
+<th class="py-3 px-4 text-center w-24">Push</th>
+<th class="py-3 px-4 text-center w-24">SMS</th>
+<th class="py-3 px-4 text-center w-24">Email</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md">
+<!-- Row 1: Critical Triage -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error shrink-0"></span>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Critical Triage &amp; Escalations</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Emergency red flags, severe symptom elevation alerts, and urgent ED direction notices.</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 text-primary accent-primary bg-surface-variant cursor-not-allowed" disabled="" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 text-primary accent-primary bg-surface-variant cursor-not-allowed" disabled="" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 text-primary accent-primary bg-surface-variant cursor-not-allowed" disabled="" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 text-primary accent-primary bg-surface-variant cursor-not-allowed" disabled="" type="checkbox"/>
+</td>
+</tr>
+<!-- Row 2: Clinician Review Updates -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary shrink-0"></span>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Clinician Review Updates</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">When Dr. Chen or care team doctors annotate or sign off on your AI assessment log.</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+</tr>
+<!-- Row 3: Appointment Reminders -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container shrink-0"></span>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Appointment &amp; Follow-up Reminders</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Scheduled clinical visits (24 hours and 1 hour before encounter).</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+</tr>
+<!-- Row 4: Care Tips -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline-variant shrink-0"></span>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Educational Care Tips &amp; Insights</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Evidence-based preventative wellness insights personalized to your triage history.</p>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-3.5 px-4 text-center">
+<input checked="" class="rounded w-4 h-4 accent-primary text-primary cursor-pointer" type="checkbox"/>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+              * Critical Triage &amp; Escalations channels cannot be disabled to satisfy medical risk liability protocols.
+            </p>
+</div>
+<!-- Quiet Hours Container -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">bedtime</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Clinical Quiet Hours (Do Not Disturb)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mute non-urgent notifications during resting periods.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Quiet window starts:</span>
+<span class="font-headline-sm text-headline-sm text-on-surface px-2.5 py-1 bg-surface-container-low rounded">10:00 PM</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Quiet window ends:</span>
+<span class="font-headline-sm text-headline-sm text-on-surface px-2.5 py-1 bg-surface-container-low rounded">07:00 AM</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">info</span>
+<span>Urgent medical alarms and physician emergency call requests override Quiet Hours automatically.</span>
+</p>
+</div>
+</section>
+<!-- SECTION 2: Clinical Consent & Data Sharing -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-lg" id="section-clinical-consent">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Section 02</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Clinical Consent &amp; Data Governance</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Regulate permissions for artificial intelligence triage logic, regional health information exchanges (HIE), and academic validation.
+            </p>
+</div>
+<div class="space-y-space-md">
+<!-- Consent Card 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">AI-Assisted Triage Protocol Consent</h4>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm">Active • Signed</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Authorizes CareNavigator's natural language engine to parse symptoms, cross-reference against clinical benchmarks, and recommend escalation tiers.
+                </p>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-outline pt-1">
+<span>Granted on: Oct 12, 2024</span>
+<span>•</span>
+<a class="text-secondary hover:underline flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">picture_as_pdf</span>
+<span>Download Signed PDF</span>
+</a>
+</div>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-highest text-secondary hover:bg-surface-variant font-label-md text-label-md transition-colors shrink-0" type="button">
+                Review &amp; Re-sign
+              </button>
+</div>
+<!-- Consent Card 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">hub</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Health Information Exchange (HIE) Sync</h4>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm">Inter-Hospital Network</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Allows bidirectional synchronization of vital signs, ER discharge notes, and allergies across affiliated regional hospital networks (FHIR R4 protocol).
+                </p>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-outline pt-1">
+<span>Authorized Network: St. Jude Clinical Health Alliance</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Consent Card 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-tertiary">biotech</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Research &amp; Quality Improvement (De-Identified)</h4>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Optional</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Permit anonymized clinical triage metrics (zero names, zero identifiers) to be pooled for clinical algorithm safety audits and peer-reviewed studies.
+                </p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- SECTION 2B: Authorized Care Team Directory -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md" id="section-authorized-team">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Access Roster</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Authorized Clinicians &amp; Care Team</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Practitioners granted read/write access to your triage sessions and medical history.
+              </p>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-secondary font-label-md text-label-md hover:bg-surface-container transition-colors inline-flex items-center gap-1.5 self-start sm:self-auto" type="button">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+<span>Grant Doctor Access</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Doctor 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-full object-cover shrink-0 shadow-sm" data-alt="Portrait of Dr. Evelyn Chen, chief family physician with stethoscope in modern hospital clinic setting, soft neutral lighting, clinical blue scrubs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWDoqy-8jSKimDy1yGzIf56gSDTIfBpZ_MCm8cDg0qsZr8nNhkEhfaZJhViZ3XAJuCqoZt65WxpdC1x7fDzvKCMdiKHhqUXlPx--f67F8khB2Izxd8Gh5BckAf65ZpWS8jZFI2xtr3Yqlu_zsO5oxWX7bU1pxGAaMvVELmY4iwe0w___9QFn4y7p9Mqv_eUDhp0L4iErhiWKJ1IIoFyL4uVJegjEDqnl2Cx3zYXqJpCPGe30uM1C1UDA"/>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Dr. Evelyn Chen, MD</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Primary Care • Internal Medicine</p>
+<span class="inline-block mt-1 font-label-sm text-label-sm text-tertiary">Full Clinical Authority</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1" title="Revoke access" type="button">
+<span class="material-symbols-outlined text-[20px]">link_off</span>
+</button>
+</div>
+<!-- Doctor 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-full object-cover shrink-0 shadow-sm" data-alt="Portrait of Dr. Marcus Rivera, cardiologist specialist in modern clinic consultation room, clean light, clinical white coat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ6BtPuZVJOMAtOLOTVnJGUhsoSx-9Nw1CalOGak0tye_XpZTAKaTbeADcrQhrRzaL4K5AW3ryuml7ObwA4qZLrydEZsFIo19S0qAmU-9egj3cZ_rbtKRss3paDFb5WKG__VE4akH4wsMlvMoQSKAqf9EVDmQy38060c1DJknHtT7pygQ5GEwAU6_DLdwR_Cn685VIkOnBUNueNP02c0H944ulGEtrditqwJi9LSt6db1MCPyWCyLDew"/>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Dr. Marcus Rivera, FACC</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cardiovascular Assessment</p>
+<span class="inline-block mt-1 font-label-sm text-label-sm text-secondary">Triage Assessment View Only</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1" title="Revoke access" type="button">
+<span class="material-symbols-outlined text-[20px]">link_off</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Security & Access -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-lg" id="section-security">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Section 03</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Security &amp; Device Sessions</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Safeguard medical credentials with cryptographically backed multi-factor verification.
+            </p>
+</div>
+<!-- 2FA Box -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">phonelink_lock</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Two-Factor Authentication (2FA)</h4>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm">Active • TOTP</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Primary authenticator: Google Authenticator / 1Password. Required for accessing lab results and modifying triage notes.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container-highest text-secondary hover:bg-surface-variant font-label-md text-label-md transition-colors" type="button">
+                Configure Backup Codes
+              </button>
+</div>
+</div>
+<!-- Session Inactivity Timeout Selector -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="space-y-0.5">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Automatic Clinical Inactivity Timeout</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Enforces local dashboard screen lockout if no keyboard or pointer movement is registered.
+              </p>
+</div>
+<select class="px-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-high transition-colors cursor-pointer">
+<option value="5">5 Minutes</option>
+<option selected="" value="15">15 Minutes (HIPAA Recommended)</option>
+<option value="30">30 Minutes</option>
+<option value="60">60 Minutes</option>
+</select>
+</div>
+<!-- Active Devices List -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Authenticated Devices</h4>
+<button class="text-error hover:text-on-error-container font-label-md text-label-md hover:underline" type="button">
+                Log out all other devices
+              </button>
+</div>
+<div class="space-y-2">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">laptop_mac</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">MacBook Pro • Chrome 129.0</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm">This Machine</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">San Francisco, CA • Active Now • IP: 198.51.100.42</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">Verified TLS 1.3</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">smartphone</span>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">iPhone 15 Pro • CareNavigator iOS App</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">San Francisco, CA • 4 hours ago via FaceID</p>
+</div>
+</div>
+<button class="text-error hover:text-on-error-container font-label-md text-label-md" type="button">
+                  Terminate
+                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: Data Rights & Export -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md" id="section-data-rights">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Section 04</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Data Portability &amp; Archival</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                Exercise your statutory data portability rights under HIPAA and GDPR Article 20.
+              </p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors shadow-sm self-start sm:self-auto" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export Full Health Archive</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-1">
+<span class="material-symbols-outlined text-[22px] text-primary">terminal</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">FHIR / JSON Format</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Standardized interoperable format for uploading to third-party hospital portals.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-1">
+<span class="material-symbols-outlined text-[22px] text-secondary">description</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">C-CDA Clinical Summary</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Continuity of Care Document formatted for primary care physician onboarding.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-1">
+<span class="material-symbols-outlined text-[22px] text-tertiary">folder_zip</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Encrypted .ZIP Archive</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complete raw triage transcripts, audio logs, and high-resolution chart snapshots.</p>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Danger Zone & Permanent Deletion -->
+<section class="bg-error-container/20 rounded-xl p-space-lg space-y-space-md shadow-sm" id="section-danger-zone">
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Danger Zone: Account &amp; Record Deletion</h2>
+</div>
+<!-- Regulatory Retention Notice -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-error">gavel</span>
+<span>Important Medical Record Legal Notice</span>
+</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Under medical practice statutory regulations and the Health Insurance Portability and Accountability Act (HIPAA), authenticated physician encounter summaries, clinician signatures, and formal triage notes must be archived securely for <strong>7 years</strong> (or longer for pediatric cases) according to prevailing state laws. 
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Requesting deletion will permanently purge your active login credentials, raw conversation telemetry, device identifiers, and patient demographic profiles, and revoke all third-party provider access tokens immediately.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md pt-space-xs">
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Irreversible Account Termination</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Purge telemetry data and initiate retention freeze on medical transcripts.</p>
+</div>
+<button class="px-4 py-2 rounded-lg bg-error text-on-error font-label-lg text-label-lg hover:bg-on-error-container transition-colors shadow-sm inline-flex items-center gap-1.5 shrink-0" onclick="document.getElementById('deletion-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+<span>Request Account Deletion &amp; Purge Data</span>
+</button>
+</div>
+</section>
+<!-- Compliance & Sample Data Watermark Footer -->
+<div class="p-space-md bg-surface-container-lowest rounded-xl flex flex-col md:flex-row items-center justify-between gap-space-md text-center md:text-left">
+<div class="space-y-0.5">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Clinical Decision Support Architecture</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Fictional Sample Data • For Clinical Evaluation Only. Decision-support output only. Validate all recommendations with licensed clinical protocols.
+            </p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Build 2.84.1</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">TLS 1.3 Certified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Confirmation Dialog Modal (Preview / Interactive) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-sm hidden" id="deletion-modal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-lg space-y-space-lg shadow-xl relative animate-in fade-in zoom-in-95 duration-150">
+<!-- Modal Header -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm text-error">
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px] text-error">warning</span>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface leading-tight">Delete Account &amp; Purge Data?</h3>
+<span class="font-label-sm text-label-sm text-error uppercase tracking-wider">Irreversible Action</span>
+</div>
+</div>
+<button class="p-1 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" onclick="document.getElementById('deletion-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Warning description -->
+<div class="bg-surface-container-low p-space-md rounded-lg space-y-2">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+          This action cannot be undone. Under clinical retention regulations, verified physician encounter notes may be archived for <strong>7 years</strong> according to state law, but your patient profile, credentials, and AI chat transcripts will be immediately purged.
+        </p>
+<ul class="font-body-sm text-body-sm text-on-surface-variant list-disc list-inside space-y-1">
+<li>Immediate revoking of authorized doctor access links</li>
+<li>Termination of automated symptom monitoring alarms</li>
+<li>Full permanent deletion of biometrics &amp; non-archival chat logs</li>
+</ul>
+</div>
+<!-- Confirmation Input Form -->
+<div class="space-y-space-sm">
+<label class="font-label-md text-label-md text-on-surface block" for="delete-confirmation-input">
+          To confirm, type <strong class="text-error font-headline-sm">DELETE</strong> in the box below:
+        </label>
+<input class="w-full px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container transition-colors" id="delete-confirmation-input" oninput="checkDeleteMatch(this.value)" placeholder="Type DELETE" type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" onclick="document.getElementById('deletion-modal').classList.add('hidden')" type="button">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-error text-on-error font-label-md text-label-md opacity-40 cursor-not-allowed transition-all inline-flex items-center gap-1.5" disabled="" id="delete-confirm-btn" onclick="executePurge()" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+<span>Confirm Permanent Deletion</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-xl font-body-md text-body-md items-center gap-3 transition-opacity duration-300 hidden" id="toast-notification">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed">task_alt</span>
+<span id="toast-message">Preferences updated successfully.</span>
+</div>
+</div>
+<script>
+  function checkDeleteMatch(val) {
+    const btn = document.getElementById('delete-confirm-btn');
+    if (!btn) return;
+    if (val.trim() === 'DELETE') {
+      btn.disabled = false;
+      btn.classList.remove('opacity-40', 'cursor-not-allowed');
+      btn.classList.add('hover:bg-on-error-container');
+    } else {
+      btn.disabled = true;
+      btn.classList.add('opacity-40', 'cursor-not-allowed');
+      btn.classList.remove('hover:bg-on-error-container');
+    }
+  }
+
+  function executePurge() {
+    document.getElementById('deletion-modal').classList.add('hidden');
+    showToast('Data purge request submitted. Verification token sent to registered email.');
+  }
+
+  function saveSettingsNotification() {
+    showToast('Privacy & communication parameters saved to clinical registry.');
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast-notification');
+    const label = document.getElementById('toast-message');
+    if (!toast || !label) return;
+    label.innerText = msg;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      toast.classList.remove('flex');
+    }, 4000);
+  }
+</script></main></div></body></html>

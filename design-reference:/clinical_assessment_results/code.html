@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary-container": "#008089",
+          "on-tertiary-fixed": "#002022",
+          "surface-tint": "#006874",
+          "surface-bright": "#f6f9ff",
+          "outline-variant": "#bdc9ca",
+          "secondary": "#2060a3",
+          "background": "#f6f9ff",
+          "primary-fixed": "#95f1ff",
+          "on-primary-fixed": "#001f24",
+          "on-tertiary-container": "#effeff",
+          "on-surface": "#091d2b",
+          "on-secondary-fixed-variant": "#004883",
+          "inverse-surface": "#1f3241",
+          "on-error-container": "#93000a",
+          "inverse-on-surface": "#e6f2ff",
+          "error": "#ba1a1a",
+          "on-tertiary": "#ffffff",
+          "on-surface-variant": "#3e494a",
+          "surface-container-highest": "#d1e5f8",
+          "outline": "#6e797b",
+          "surface-dim": "#c8dcf0",
+          "surface-container-high": "#d6ebfe",
+          "on-secondary": "#ffffff",
+          "on-background": "#091d2b",
+          "on-primary-container": "#effdff",
+          "surface-container-lowest": "#ffffff",
+          "on-error": "#ffffff",
+          "surface-container": "#e1f0ff",
+          "error-container": "#ffdad6",
+          "primary-container": "#087f8c",
+          "tertiary-fixed-dim": "#57d8e4",
+          "on-primary": "#ffffff",
+          "on-primary-fixed-variant": "#004f57",
+          "on-tertiary-fixed-variant": "#004f55",
+          "secondary-fixed": "#d4e3ff",
+          "surface": "#f6f9ff",
+          "inverse-primary": "#79d4e2",
+          "on-secondary-container": "#004681",
+          "primary": "#00646f",
+          "secondary-fixed-dim": "#a4c9ff",
+          "surface-container-low": "#ecf5ff",
+          "tertiary-fixed": "#82f3ff",
+          "on-secondary-fixed": "#001c39",
+          "primary-fixed-dim": "#79d4e2",
+          "surface-variant": "#d1e5f8",
+          "tertiary": "#00656c",
+          "secondary-container": "#80b6fe"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin": "2rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem",
+          "gutter-sm": "1rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "display": ["Inter"],
+          "body-sm": ["Inter"],
+          "body-lg": ["Inter"],
+          "title-md": ["Inter"],
+          "headline-lg": ["Inter"],
+          "label-sm": ["Inter"],
+          "headline-lg-mobile": ["Inter"],
+          "label-md": ["Inter"],
+          "body-md": ["Inter"],
+          "headline-md": ["Inter"],
+          "headline-sm": ["Inter"],
+          "label-lg": ["Inter"]
+        },
+        "fontSize": {
+          "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0", "fontWeight": "400"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+          "title-md": ["16px", {"lineHeight": "22px", "letterSpacing": "0", "fontWeight": "600"}],
+          "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400"}],
+          "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+        }
+      }
+    }
+  };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 flex items-center px-space-lg gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[20px]">health_metrics</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">CareNavigator</span><span class="font-label-sm text-label-sm text-on-surface-variant">Clinical Console</span></div></div><div class="px-space-md py-space-sm"><div class="bg-surface-container-low rounded-lg p-space-sm flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[16px]">verified_user</span><span class="font-label-sm text-label-sm text-on-surface-variant">HIPAA Compliant System</span></div></div><nav class="flex flex-col gap-space-xs px-space-sm mt-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-label-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span>Overview</a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary-container font-label-lg" data-path="ai-health-assessment" href="#"><span class="material-symbols-outlined text-[20px]">neurology</span>AI Health Assessment</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="assessment-history" href="#"><span class="material-symbols-outlined text-[20px]">history</span>Assessment History</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="media-and-voice" href="#"><span class="material-symbols-outlined text-[20px]">mic</span>Media & Voice</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="find-a-doctor" href="#"><span class="material-symbols-outlined text-[20px]">person_search</span>Find a Doctor</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="medical-records" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span>Medical Records</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="appointments" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span>Appointments</a></nav></div><div class="p-space-md flex flex-col gap-space-sm"><nav class="flex flex-col" data-active-classes="bg-primary-container text-on-primary-container font-label-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span>Settings</a></nav><div class="bg-surface-container-low rounded-lg p-space-sm"><div class="flex items-center gap-space-xs text-on-surface mb-space-xs"><span class="material-symbols-outlined text-secondary text-[16px]">info</span><span class="font-label-sm text-label-sm font-semibold">Clinical Disclaimer</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Decision-support tool only. Not intended for direct diagnostic substitution.</p></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md"><a class="hover:text-on-surface transition-colors" data-path="overview" href="#">CareNavigator</a><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-on-surface font-semibold">Clinical Workflow</span></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-on-surface-variant text-[18px]">search</span><input class="h-10 pl-9 pr-space-md w-72 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/25 shadow-[0_1px_3px_rgba(22,50,79,0.04)]" placeholder="Search records, vitals, ICD-10..." type="text"/></div><button aria-label="Help Resources" class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><button aria-label="Notifications" class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface">Dr. A. Vance</span><span class="font-label-sm text-label-sm text-on-surface-variant">Internal Medicine</span></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-md sm:px-space-lg lg:px-space-xl py-space-lg max-w-7xl mx-auto w-full flex flex-col gap-space-lg">
+<!-- Top Metadata Breadcrumb & Action Banner -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md pb-space-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-surface-container-high text-on-surface px-2.5 py-0.5 rounded-full font-label-sm text-label-sm tracking-wider uppercase">Sample Assessment Record</span>
+<span class="font-body-sm text-body-sm text-outline">•</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">REF: REF-2025-0849-AC</span>
+<span class="font-body-sm text-body-sm text-outline">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+            Oct 24, 2025 at 09:42 AM EDT
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Clinical Decision Support Triage Summary</h1>
+</div>
+<div class="flex items-center gap-space-sm self-stretch sm:self-auto">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container transition-colors flex items-center justify-center gap-space-xs flex-1 sm:flex-initial" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+          Export PDF
+        </button>
+<button class="h-10 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container transition-colors flex items-center justify-center gap-space-xs flex-1 sm:flex-initial" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+          Share with PCP
+        </button>
+</div>
+</div>
+<!-- Triage Status & Clinician Review Row -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+<!-- Urgency Banner -->
+<div class="md:col-span-7 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start gap-space-md relative overflow-hidden">
+<div class="w-2 h-full absolute left-0 top-0 bottom-0 bg-[#B7791F]"></div>
+<div class="w-10 h-10 rounded-lg bg-[#FEF3C7] text-[#B7791F] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+</div>
+<div class="flex flex-col gap-1 pr-space-xs">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="bg-[#FEF3C7] text-[#B7791F] px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+              Moderate Urgency (Sample Category)
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Protocol Code: CDS-RESP-04</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Semi-urgent outpatient evaluation advised</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Patient presents with progressive respiratory indicators warranting dedicated clinician evaluation, auscultation, and targeted vitals verification.</p>
+</div>
+</div>
+<!-- Clinician Review Status -->
+<div class="md:col-span-5 bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">clinical_notes</span>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<div class="flex items-center justify-between">
+<span class="bg-surface-container text-secondary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              Clinician Review In Queue
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Est. 45 min</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface">Dr. E. Vance, MD (Attending)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Assigned for secondary triage review and direct sign-off. You will receive an SMS and portal alert once finalized.</p>
+</div>
+</div>
+</div>
+<!-- Very Prominent "Recommended Next Action" Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-md flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs">
+<span class="bg-primary-container text-on-primary-container px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+              Primary Directive
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Required Care Pathway</span>
+</div>
+<h2 class="font-display text-display text-on-surface tracking-tight">Seek outpatient in-person clinical evaluation within 24–48 hours</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Schedule a targeted in-person consult with an internal medicine specialist, primary care physician, or urgent care facility. Do not rely on home observation alone due to the 14-day duration and unilateral pleuritic pain.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row lg:flex-col items-stretch gap-space-xs w-full lg:w-72 shrink-0">
+<button class="h-11 px-space-md rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[20px]">person_search</span>
+            View Recommended Doctors
+          </button>
+<button class="h-11 px-space-md rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[20px]">distance</span>
+            Find Nearby Facility
+          </button>
+</div>
+</div>
+<!-- Protocol Safety Notice Box -->
+<div class="bg-[#FFEBEE] rounded-lg p-space-md flex items-start gap-space-sm text-[#C62828]">
+<span class="material-symbols-outlined text-[22px] shrink-0 mt-0.5">e911_emergency</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold">Emergency Safety Guardrail & Clinical Disclaimer</span>
+<p class="font-body-sm text-body-sm text-[#C62828]">
+            This algorithmic assessment is a clinical decision-support tool, not an absolute diagnosis or substitute for hands-on physician care. <strong>If you experience crushing chest pressure, severe shortness of breath at rest, bluish lips, coughing up blood, or sudden neuro-deficit, call 911 immediately or proceed to the nearest emergency department.</strong>
+</p>
+</div>
+</div>
+</div>
+<!-- Visual Distinction Taxonomy of 4 Content Types -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant font-semibold">Assessment Evidence Taxonomy</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Classified data sources used in this synthesis</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center gap-space-sm shadow-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Source Type 1</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Patient-Reported</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center gap-space-sm shadow-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Source Type 2</span>
+<span class="font-label-md text-label-md text-secondary font-semibold truncate">Clinical Evidence</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center gap-space-sm shadow-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Source Type 3</span>
+<span class="font-label-md text-label-md text-primary font-semibold truncate">Care Protocol</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex items-center gap-space-sm shadow-sm">
+<span class="w-8 h-8 rounded-lg bg-inverse-surface text-inverse-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Source Type 4</span>
+<span class="font-label-md text-label-md text-inverse-surface font-semibold truncate">Clinician Determinations</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section "Why this recommendation?" Grid -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Triage Rationale</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Why this recommendation?</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Deterministic rule breakdown & reasoning pathways</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- 1. Influencing Symptoms -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="bg-surface-container-highest text-on-surface px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                Patient-Reported
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Factor 1 of 5</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">symptoms</span>
+              Influencing Symptoms
+            </h3>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant list-none pt-space-xs">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[#B7791F] text-[18px] shrink-0 mt-0.5">arrow_right</span>
+<span><strong class="text-on-surface">Persistent dry cough > 14 days</strong>: Progressive rather than resolving.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[#B7791F] text-[18px] shrink-0 mt-0.5">arrow_right</span>
+<span><strong class="text-on-surface">Low-grade evening pyrexia</strong>: Recorded at 38.1°C (100.6°F) recurrently.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[#B7791F] text-[18px] shrink-0 mt-0.5">arrow_right</span>
+<span><strong class="text-on-surface">Unilateral pleuritic discomfort</strong>: Localized right basal pain on deep inspiratory hold.</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm font-label-sm text-label-sm text-on-surface-variant flex items-center justify-between">
+<span>Symptom Intensity Score</span>
+<span class="font-semibold text-on-surface">7.2 / 10 (Elevated)</span>
+</div>
+</div>
+<!-- 2. Unknown Information / Gaps -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="bg-[#FEF3C7] text-[#B7791F] px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">help_center</span>
+                Clinical Gap
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Factor 2 of 5</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[#B7791F] text-[20px]">device_thermostat</span>
+              Unknown Data & Gaps
+            </h3>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant list-none pt-space-xs">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5">check_box_outline_blank</span>
+<span><strong class="text-on-surface">Spirometry / FEV1 unverified</strong>: No recent clinic pulmonary functioning testing on file.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5">check_box_outline_blank</span>
+<span><strong class="text-on-surface">Sputum microbiology unperformed</strong>: Bacterial vs reactive cellular count pending.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0 mt-0.5">check_box_outline_blank</span>
+<span><strong class="text-on-surface">Pulse oximetry uncalibrated</strong>: SpO2 resting ambient rate not clinically confirmed.</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm font-label-sm text-label-sm text-on-surface-variant flex items-center justify-between">
+<span>Diagnostic Confidence</span>
+<span class="font-semibold text-[#B7791F]">64% (Gaps Present)</span>
+</div>
+</div>
+<!-- 3. Effect of Medical History -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="bg-surface-container-high text-secondary px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">folder_shared</span>
+                EHR Cross-Reference
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Factor 3 of 5</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">history_edu</span>
+              Longitudinal History
+            </h3>
+<ul class="flex flex-col gap-space-xs font-body-md text-body-md text-on-surface-variant list-none pt-space-xs">
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span><strong class="text-on-surface">Prior mild reactive airway</strong>: Documented pediatric asthma episode (no hospitalizations).</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span><strong class="text-on-surface">Non-smoker status</strong>: Zero pack-year tobacco or vaping history confirms lower baseline risk.</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span><strong class="text-on-surface">Immunizations up to date</strong>: Seasonal influenza and COVID-19 booster verified in registry.</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm font-label-sm text-label-sm text-on-surface-variant flex items-center justify-between">
+<span>Historical Co-morbidity Risk</span>
+<span class="font-semibold text-secondary">Low-to-Moderate</span>
+</div>
+</div>
+<!-- 4. Supporting Guideline -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="bg-primary-container text-on-primary-container px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">policy</span>
+                Protocol Match
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Factor 4 of 5</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+              Supporting Guideline
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Matched against <strong>CDC / ATS Adult Subacute Cough Clinical Pathway (2024 Edition)</strong>.
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Section 4.2 directs that non-resolving cough > 14 days with intermittent hyperthermia requires physical chest exam to exclude secondary consolidation, atypical pathogen, or reactive bronchitis.
+            </p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm font-label-sm text-label-sm text-on-surface-variant flex items-center justify-between">
+<span>Pathway Fidelity</span>
+<span class="font-semibold text-primary">Exact Match (98.4%)</span>
+</div>
+</div>
+<!-- 5. Algorithmic Limitations -->
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="bg-surface-container-high text-on-surface px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                System Boundary
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Factor 5 of 5</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[20px]">shield</span>
+              AI Rule Engine Limitations & Boundary Conditions
+            </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Self-Report Calibration Gap</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Patient temperature was captured on non-certified commercial home equipment. Temperature variations of ±0.5°C are common and must be validated in an exam setting.
+                </p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Inability to Substitute Physical Exam</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Algorithmic triage cannot detect crackles, wheezing, rhonchi, bronchial breath sounds, or vocal fremitus, which are strictly required to rule out localized pulmonary infiltrate.
+                </p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm font-label-sm text-label-sm text-on-surface-variant flex items-center justify-between">
+<span>AI Confidence Level</span>
+<span class="font-semibold text-on-surface">Standard Class II Support</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section "Clinical Evidence" with Expandable Cards -->
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Citations & Standards</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Clinical Evidence & Literature Sources</h2>
+</div>
+<span class="bg-surface-container-high text-secondary px-2.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">
+          3 Sample Citations Retrieved
+        </span>
+</div>
+<div class="flex flex-col gap-space-sm" id="evidence-accordion">
+<!-- Card 1 -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm transition-all" open="">
+<summary class="p-space-md flex items-center justify-between cursor-pointer list-none select-none hover:bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-md min-w-0 pr-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">description</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase">American Thoracic Society (ATS)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Vol 48, Rev June 2024</span>
+<span class="bg-surface-container text-on-surface-variant text-[10px] px-1.5 py-0.2 rounded font-semibold uppercase">Sample Citation</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface truncate">Evidence-Based Management of Prolonged Post-Viral Cough in Adults</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] transition-transform group-open:rotate-180 shrink-0">expand_more</span>
+</summary>
+<div class="px-space-md pb-space-md pt-space-xs flex flex-col gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<p>
+              Establishes standard protocol for outpatient follow-up when subacute respiratory distress extends past the 14-day threshold. Recommends baseline CBC with differential, physical auscultation, and chest radiography if pleuritic pain persists.
+            </p>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline">DOI: 10.1164/rccm.sample.0849</span>
+<a class="text-primary hover:underline font-label-md text-label-md flex items-center gap-1 font-semibold" href="#">
+                View Clinical Protocol
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</details>
+<!-- Card 2 -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm transition-all">
+<summary class="p-space-md flex items-center justify-between cursor-pointer list-none select-none hover:bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-md min-w-0 pr-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase">National Institute for Health and Care Excellence (NICE)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• Guideline NG191, Updated 2023</span>
+<span class="bg-surface-container text-on-surface-variant text-[10px] px-1.5 py-0.2 rounded font-semibold uppercase">Sample Citation</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface truncate">Outpatient Triage Guidelines for Subacute Respiratory Symptoms</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] transition-transform group-open:rotate-180 shrink-0">expand_more</span>
+</summary>
+<div class="px-space-md pb-space-md pt-space-xs flex flex-col gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<p>
+              Provides standardized clinical decision thresholds for general practitioners triaging respiratory infection complaints. Explicitly designates the presence of localized pleuritic discomfort as a criterion for timely non-emergency provider examination.
+            </p>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline">Ref: NICE-NG191-SEC2</span>
+<a class="text-primary hover:underline font-label-md text-label-md flex items-center gap-1 font-semibold" href="#">
+                Access Full Guideline (nice.org.uk/sample)
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</details>
+<!-- Card 3 -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm transition-all">
+<summary class="p-space-md flex items-center justify-between cursor-pointer list-none select-none hover:bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-md min-w-0 pr-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">science</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase">Annals of Family Medicine</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">• March 2024 Edition</span>
+<span class="bg-surface-container text-on-surface-variant text-[10px] px-1.5 py-0.2 rounded font-semibold uppercase">Sample Citation</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface truncate">Differentiating Viral Bronchitis vs Secondary Bacterial Infiltration in Primary Care</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px] transition-transform group-open:rotate-180 shrink-0">expand_more</span>
+</summary>
+<div class="px-space-md pb-space-md pt-space-xs flex flex-col gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<p>
+              Multicenter retrospective observational review outlining key differentiation criteria between self-limiting viral bronchitis and secondary bacterial superinfections, emphasizing fever recurrence patterns after day 10.
+            </p>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline">Source: AFM.2024.03.1189</span>
+<a class="text-primary hover:underline font-label-md text-label-md flex items-center gap-1 font-semibold" href="#">
+                Read Source Study (Sample Link)
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</details>
+</div>
+</div>
+<!-- Primary & Secondary Action Toolbar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Available Care Coordination Pathways</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Execute directly from this clinical summary record</p>
+</div>
+<span class="bg-[#E8F5E9] text-[#21865B] px-3 py-1 rounded-full font-label-sm text-label-sm font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#21865B]"></span>
+          In-Network Booking Active
+        </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<button class="h-11 px-space-md rounded-lg bg-primary-container text-on-primary-container font-label-lg text-label-lg shadow-sm hover:opacity-95 transition-opacity flex items-center justify-center gap-space-xs sm:col-span-2 lg:col-span-1" type="button">
+<span class="material-symbols-outlined text-[20px]">person_search</span>
+<span class="truncate">Recommended Doctors</span>
+</button>
+<button class="h-11 px-space-md rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[20px]">health_and_safety</span>
+<span class="truncate">Request MD Review</span>
+</button>
+<button class="h-11 px-space-md rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="truncate">Find Nearby Facility</span>
+</button>
+<button class="h-11 px-space-md rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-space-xs" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span class="truncate">Save Summary</span>
+</button>
+<button class="h-11 px-space-md rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[20px]">update</span>
+<span class="truncate">Continue Follow-Up</span>
+</button>
+</div>
+<!-- Utility & Safety Links -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md pt-space-sm border-t border-outline-variant/30">
+<a class="text-on-surface-variant hover:text-error transition-colors font-label-md text-label-md flex items-center gap-1.5" href="#report">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+          Report incorrect or misleading summary data
+        </a>
+<div class="flex items-center gap-space-md flex-wrap justify-center">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">support_agent</span>
+<span class="font-label-md text-label-md font-semibold">Talk to a human:</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">24/7 Registered Nurse Triage Line:</span>
+<a class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-1 bg-surface-container px-2.5 py-1 rounded-md" href="tel:18005550199">
+<span class="material-symbols-outlined text-[16px]">call</span>
+            1-800-555-0199
+          </a>
+</div>
+</div>
+</div>
+<!-- Audit Trace & Non-Affiliation Footnote -->
+<div class="p-space-sm text-center flex flex-col items-center gap-1 pb-space-xl">
+<span class="font-label-sm text-label-sm text-outline">
+        CareNavigator Core Engine Version 4.12.8 • Engine ID: CDSS-BUILD-8849-RELEASE • ISO 27001 Certified
+      </span>
+<span class="font-label-sm text-label-sm text-outline">
+        Synthesized under IRB-exempt clinical decision protocol for demonstration purposes. All sample patient identifiers are artificially generated.
+      </span>
+</div>
+</div>
+</div></main></div></body></html>

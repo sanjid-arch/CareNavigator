@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-bright": "#f8f9ff", "surface-container-highest": "#d2e4ff", "on-tertiary": "#ffffff", "on-error-container": "#93000a", "primary": "#00646f", "inverse-primary": "#79d4e2", "inverse-on-surface": "#eaf1ff", "outline-variant": "#bdc9ca", "on-secondary-fixed-variant": "#004f55", "on-surface-variant": "#3e494a", "surface": "#f8f9ff", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "surface-tint": "#006874", "tertiary-container": "#3b75b9", "tertiary-fixed-dim": "#a4c9ff", "on-tertiary-container": "#fafaff", "secondary-container": "#75f2fe", "on-primary": "#ffffff", "primary-container": "#087f8c", "on-primary-fixed-variant": "#004f57", "on-error": "#ffffff", "tertiary": "#1a5c9e", "error": "#ba1a1a", "surface-dim": "#c3dcff", "background": "#f8f9ff", "on-primary-fixed": "#001f24", "inverse-surface": "#16324f", "secondary": "#006970", "primary-fixed": "#95f1ff", "on-secondary-container": "#006d75", "surface-container-high": "#dbe9ff", "surface-container": "#e5eeff", "on-tertiary-fixed": "#001c39", "secondary-fixed": "#82f3ff", "primary-fixed-dim": "#79d4e2", "on-surface": "#001d37", "on-tertiary-fixed-variant": "#004883", "surface-variant": "#d2e4ff", "secondary-fixed-dim": "#57d8e4", "outline": "#6e797b", "on-secondary-fixed": "#002022", "on-background": "#001d37", "tertiary-fixed": "#d4e3ff", "on-primary-container": "#effdff", "surface-container-low": "#eff4ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "gutter-mobile": "1rem", "space-xl": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "gutter": "1.5rem", "margin": "2rem" }, "fontFamily": { "headline-md": ["Inter"], "label-md": ["Inter"], "label-lg": ["Inter"], "headline-lg-mobile": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Inter"], "headline-xl": ["Inter"], "body-sm": ["Inter"], "headline-xl-mobile": ["Inter"], "body-md": ["Inter"] }, "fontSize": { "headline-md": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg-mobile": ["1.375rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "400" }], "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.025em", "fontWeight": "500" }], "headline-sm": ["1.125rem", { "lineHeight": "1.5rem", "fontWeight": "600" }], "headline-xl": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "400" }], "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["1rem", { "lineHeight": "1.5rem", "fontWeight": "400" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low border-r border-outline-variant/30 z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm border-b border-outline-variant/20 bg-surface-container-lowest"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">health_and_safety</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-tight">CareNavigator</span><span class="font-label-sm text-label-sm text-primary font-semibold tracking-wider uppercase">Admin Console</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Clinical Operations</span></div><nav class="flex flex-col gap-space-xs mt-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Overview</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary-container font-headline-sm shadow-sm" data-path="impact-and-metrics" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span>Impact &amp; Metrics</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="triage-governance" href="#"><span class="material-symbols-outlined text-[20px]">rule</span><span>Triage Governance</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-space-container-high hover:text-on-surface transition-all" data-path="clinician-roster" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>Clinician Roster</span></a></nav><div class="px-space-sm pt-space-md pb-space-xs mt-space-sm border-t border-outline-variant/20"><span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Compliance &amp; Security</span></div><nav class="flex flex-col gap-space-xs mt-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Audit Logs</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="security-and-access" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span>Security &amp; Access</span></a></nav></div></div><div class="p-space-md border-t border-outline-variant/20 bg-surface-container-lowest"><div class="flex items-center gap-space-sm p-space-sm rounded-lg bg-surface-container-low border border-outline-variant/30"><div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Engine: v4.8.2-Clinical</span><span class="font-label-sm text-label-sm text-on-surface-variant">HIPAA Confirmed</span></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(22,50,79,0.03)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-low border border-outline-variant/40 px-space-sm py-space-xs rounded-lg"><span class="material-symbols-outlined text-primary text-[16px]">shield_person</span><span class="font-label-sm text-label-sm text-on-surface font-medium">Superadmin / Clinical Ops</span></div><div class="flex items-center gap-space-xs bg-surface-container-low border border-outline-variant/40 px-space-sm py-space-xs rounded-lg"><span class="w-2 h-2 rounded-full bg-[#21865B]"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Operational</span></div><div class="hidden xl:flex items-center gap-space-xs bg-surface-container border border-outline-variant/40 px-space-sm py-space-xs rounded-lg"><span class="material-symbols-outlined text-outline text-[16px]">cloud_done</span><span class="font-label-sm text-label-sm text-on-surface-variant">Production - Read Only Clinical Analytics</span></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface p-space-xs rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface p-space-xs rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><div class="h-6 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-label-md text-label-md text-on-surface font-semibold">Dr. Clara Vance</div><div class="font-label-sm text-label-sm text-on-surface-variant">Chief Medical Officer</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 pt-16 w-full px-space-xl py-space-lg bg-surface"><div class="flex flex-col w-full gap-space-lg">
+<!-- Governance / Operational Disclaimer Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md shadow-sm">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface">Service activity metrics, not proof of health outcomes.</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant uppercase tracking-wider font-semibold">Governance Notice</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            These metrics evaluate triage throughput and workflow latency across automated channels. Clinical outcome efficacy is measured via independent longitudinal audits and peer reviews.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-lowest text-label-sm font-label-sm text-secondary font-medium shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          Live Sync Active (Refreshes every 5m)
+        </span>
+</div>
+</div>
+</div>
+<!-- Page Header & Global Controls -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mb-1">
+<span>Clinical Operations</span>
+<span>/</span>
+<span class="text-primary font-semibold">Performance Analytics</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Service Activity &amp; Operational Impact</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+        Operational throughput, workflow performance, and triage routing indicators across all deployment regions.
+      </p>
+</div>
+<!-- Filters & Actions Toolbar -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<!-- Date Range -->
+<div class="flex items-center gap-space-xs px-space-sm py-2 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface text-label-lg font-label-lg cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-outline text-[18px]">calendar_today</span>
+<span>Last 30 Days: Oct 1 - Oct 31, 2024</span>
+<span class="material-symbols-outlined text-outline text-[18px]">expand_more</span>
+</div>
+<!-- Facility Filter -->
+<div class="flex items-center gap-space-xs px-space-sm py-2 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface text-label-lg font-label-lg cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-outline text-[18px]">domain</span>
+<span>All Clinical Networks (14)</span>
+<span class="material-symbols-outlined text-outline text-[18px]">expand_more</span>
+</div>
+<!-- Region Selector -->
+<div class="flex items-center gap-space-xs px-space-sm py-2 rounded-lg bg-surface-container-lowest shadow-sm text-on-surface text-label-lg font-label-lg cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-outline text-[18px]">public</span>
+<span>North America &amp; EU Regions</span>
+<span class="material-symbols-outlined text-outline text-[18px]">expand_more</span>
+</div>
+<!-- Export Action Dropdown/Button -->
+<div class="relative group">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg hover:bg-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">ios_share</span>
+<span>Export Report</span>
+<span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+<div class="hidden group-hover:flex flex-col absolute right-0 mt-1 w-44 rounded-lg bg-surface-container-lowest shadow-xl z-30 py-1">
+<a class="px-space-md py-2 text-label-sm font-label-sm text-on-surface hover:bg-surface-container flex items-center justify-between" href="#">
+<span>Executive PDF</span>
+<span class="material-symbols-outlined text-[16px] text-outline">picture_as_pdf</span>
+</a>
+<a class="px-space-md py-2 text-label-sm font-label-sm text-on-surface hover:bg-surface-container flex items-center justify-between" href="#">
+<span>Raw Telemetry (CSV)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">csv</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Metric Cards Grid (5 core + 1 dedicated empty state card) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-md">
+<!-- Card 1: Assessment Completion Rate -->
+<div class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline font-semibold">Triage Throughput</span>
+<!-- Definition Tooltip -->
+<div class="relative inline-block cursor-help group/tooltip">
+<span class="material-symbols-outlined text-outline text-[16px] hover:text-primary">info</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-space-sm bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm rounded-lg shadow-xl hidden group-hover/tooltip:block z-20 pointer-events-none">
+                Definition: The percentage of started triage intake sessions that resulted in a finalized clinical recommendation or routing decision.
+              </div>
+</div>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Assessment Completion Rate</h3>
+<div class="flex items-baseline gap-space-sm mt-3">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">94.2%</span>
+<span class="inline-flex items-center gap-0.5 text-label-sm font-label-sm text-[#21865B] bg-[#DEF7EC] px-2 py-0.5 rounded-full font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+            +1.8% vs last month
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">38,410 completed of 40,775 initiated</p>
+</div>
+<!-- Sparkline indicator -->
+<div class="mt-4 pt-3 bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-xl">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline mb-1.5">
+<span>Daily Completion Stability</span>
+<span class="font-semibold text-on-surface">Target: &gt;90%</span>
+</div>
+<div class="flex items-end gap-1.5 h-7">
+<div class="flex-1 bg-primary/20 hover:bg-primary rounded-t-sm h-[75%] transition-all" title="Day 1-5: 91.2%"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary rounded-t-sm h-[82%] transition-all" title="Day 6-10: 92.4%"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary rounded-t-sm h-[88%] transition-all" title="Day 11-15: 93.6%"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary rounded-t-sm h-[86%] transition-all" title="Day 16-20: 93.1%"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary rounded-t-sm h-[94%] transition-all" title="Day 21-25: 94.0%"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[96%] transition-all" title="Day 26-30: 94.2%"></div>
+</div>
+</div>
+</div>
+<!-- Card 2: Time to Recommendation -->
+<div class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline font-semibold">Algorithmic Velocity</span>
+<div class="relative inline-block cursor-help group/tooltip">
+<span class="material-symbols-outlined text-outline text-[16px] hover:text-primary">info</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-space-sm bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm rounded-lg shadow-xl hidden group-hover/tooltip:block z-20 pointer-events-none">
+                Definition: The elapsed time from the patient's submission of the final intake question to the generation of the preliminary algorithmic recommendation.
+              </div>
+</div>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Time to Recommendation</h3>
+<div class="flex items-baseline gap-space-sm mt-3">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">2m 18s</span>
+<span class="inline-flex items-center gap-0.5 text-label-sm font-label-sm text-[#21865B] bg-[#DEF7EC] px-2 py-0.5 rounded-full font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span>
+            -14s vs benchmark
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Median automated triage generation time</p>
+</div>
+<!-- Milestone progress indicator -->
+<div class="mt-4 pt-3 bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-xl">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline mb-1.5">
+<span>Latency SLA: 3m 00s</span>
+<span class="font-semibold text-secondary">Optimal Band</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full" style="width: 76%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 3: Time to Clinician Review -->
+<div class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline font-semibold">Clinical Oversight</span>
+<div class="relative inline-block cursor-help group/tooltip">
+<span class="material-symbols-outlined text-outline text-[16px] hover:text-primary">info</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-space-sm bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm rounded-lg shadow-xl hidden group-hover/tooltip:block z-20 pointer-events-none">
+                Definition: The duration between an assessment being flagged for human verification and a licensed clinician completing review.
+              </div>
+</div>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">medical_services</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Time to Clinician Review</h3>
+<div class="flex items-baseline gap-space-sm mt-3">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">18m 45s</span>
+<span class="inline-flex items-center gap-0.5 text-label-sm font-label-sm text-[#21865B] bg-[#DEF7EC] px-2 py-0.5 rounded-full font-semibold">
+            Within SLA (&lt; 30m)
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">For high-acuity &amp; protocol-triggered escalations</p>
+</div>
+<!-- SLA Status Chip / Metric Bar -->
+<div class="mt-4 pt-3 bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-xl flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Escalation Compliance</span>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-primary font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+          98.4% SLA Adherence
+        </span>
+</div>
+</div>
+<!-- Card 4: Referral Completion -->
+<div class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline font-semibold">Care Continuity</span>
+<div class="relative inline-block cursor-help group/tooltip">
+<span class="material-symbols-outlined text-outline text-[16px] hover:text-primary">info</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-space-sm bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm rounded-lg shadow-xl hidden group-hover/tooltip:block z-20 pointer-events-none">
+                Definition: The proportion of patient encounters with recommended facility or specialist appointments that resulted in a verified booking or attendance confirmation.
+              </div>
+</div>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">sync_alt</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Referral Completion</h3>
+<div class="flex items-baseline gap-space-sm mt-3">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">76.8%</span>
+<span class="inline-flex items-center gap-0.5 text-label-sm font-label-sm text-[#21865B] bg-[#DEF7EC] px-2 py-0.5 rounded-full font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+            +3.2% MoM
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">8,920 confirmed bookings / care handoffs</p>
+</div>
+<!-- Linear Conversion bar -->
+<div class="mt-4 pt-3 bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-xl">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline mb-1.5">
+<span>Referred: 11,614</span>
+<span class="font-semibold text-on-surface">Booked: 8,920</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full" style="width: 76.8%;"></div>
+</div>
+</div>
+</div>
+<!-- Card 5: Human Review Percentage -->
+<div class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline font-semibold">Governance Safety</span>
+<div class="relative inline-block cursor-help group/tooltip">
+<span class="material-symbols-outlined text-outline text-[16px] hover:text-primary">info</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-space-sm bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm rounded-lg shadow-xl hidden group-hover/tooltip:block z-20 pointer-events-none">
+                Definition: The percentage of all patient intake assessments that undergo mandatory or requested manual physician validation.
+              </div>
+</div>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">safety_check</span>
+</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Human Review Percentage</h3>
+<div class="flex items-baseline gap-space-sm mt-3">
+<span class="font-headline-xl text-headline-xl text-on-surface tracking-tight">22.6%</span>
+<span class="inline-flex items-center gap-0.5 text-label-sm font-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full font-semibold">
+            Stable
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">9,215 of 40,775 cases routed to physician</p>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-xl flex items-center justify-between">
+<span class="text-label-sm font-label-sm text-outline">Clinical Policy Band</span>
+<span class="text-label-sm font-label-sm text-on-surface font-semibold">Mandated: 20.0% – 25.0%</span>
+</div>
+</div>
+<!-- Dedicated Empty / "No Data Yet" State Card: Pediatric Specialized Triage Pathway -->
+<div class="relative group rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-1.5">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline font-semibold">Specialized Stream</span>
+<div class="relative inline-block cursor-help group/tooltip">
+<span class="material-symbols-outlined text-outline text-[16px] hover:text-primary">info</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-space-sm bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm rounded-lg shadow-xl hidden group-hover/tooltip:block z-20 pointer-events-none">
+                Definition: Triage velocity and escalation metrics specifically configured for under-18 protocol workflows.
+              </div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant font-semibold">
+            No data yet
+          </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Pediatric Specialized Triage Pathway</h3>
+<!-- Empty state presentation inside card -->
+<div class="flex flex-col items-center justify-center text-center py-4 my-2">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-outline mb-2">
+<span class="material-symbols-outlined text-[24px]">child_care</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+            Specialized pediatric pathway triage protocol has not been enabled in this operational period. Metrics will populate automatically once live patient routing begins.
+          </p>
+</div>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low/50 -mx-space-lg -mb-space-lg px-space-lg pb-space-md rounded-b-xl flex items-center justify-between">
+<a class="inline-flex items-center gap-1 text-label-sm font-label-sm text-primary hover:text-primary-container font-semibold transition-colors" href="#">
+<span>Configure Protocol Thresholds</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+<span class="text-label-sm font-label-sm text-outline">Q1 Target</span>
+</div>
+</div>
+</div>
+<!-- Regional Distribution & Throughput Section -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Regional Distribution &amp; Throughput</h2>
+<!-- Definition Tooltip for Section -->
+<div class="relative inline-block cursor-help group/tooltip">
+<span class="material-symbols-outlined text-outline text-[18px] hover:text-primary">info</span>
+<div class="absolute bottom-full left-0 mb-2 w-80 p-space-sm bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm rounded-lg shadow-xl hidden group-hover/tooltip:block z-30 pointer-events-none">
+              Definition: Geographic breakdown of assessment volume, average triage velocity, and clinician review capacity across authorized operational territories.
+            </div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+          Comparative volume, completion efficiency, and escalation review latencies segmented by clinical telemetry cluster.
+        </p>
+</div>
+<!-- Quick status indicator -->
+<div class="flex items-center gap-space-sm text-label-sm font-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span> 3 Active Clusters</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span> 1 Pilot Awaiting Intake</span>
+</div>
+</div>
+<!-- Regional Breakdown Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-outline text-label-sm font-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md rounded-l-lg">Region Cluster</th>
+<th class="py-3 px-space-md">Total Volume</th>
+<th class="py-3 px-space-md">Completion Rate</th>
+<th class="py-3 px-space-md">Median Review</th>
+<th class="py-3 px-space-md">Volume Share</th>
+<th class="py-3 px-space-md rounded-r-lg text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-sm font-body-sm">
+<!-- Row 1: NA East -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-semibold text-label-sm">NA-E</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">North America - East</span>
+<span class="text-label-sm font-label-sm text-outline">Hub: Boston / Virginia Data Tier</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">
+              16,840 <span class="text-label-sm font-label-sm text-outline font-normal">assessments</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">95.1%</span>
+<div class="w-16 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 95.1%;"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">
+              16m <span class="text-label-sm font-label-sm text-[#21865B]">(Optimal)</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">41.3% of total</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#DEF7EC] text-[#21865B] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#21865B]"></span>
+                Operational
+              </span>
+</td>
+</tr>
+<!-- Row 2: NA West -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-semibold text-label-sm">NA-W</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">North America - West</span>
+<span class="text-label-sm font-label-sm text-outline">Hub: California / Oregon Tier</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">
+              12,210 <span class="text-label-sm font-label-sm text-outline font-normal">assessments</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">93.8%</span>
+<div class="w-16 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 93.8%;"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">
+              19m <span class="text-label-sm font-label-sm text-[#21865B]">(Optimal)</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">29.9% of total</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#DEF7EC] text-[#21865B] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#21865B]"></span>
+                Operational
+              </span>
+</td>
+</tr>
+<!-- Row 3: Europe Central -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-semibold text-label-sm">EU-C</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Europe - Central</span>
+<span class="text-label-sm font-label-sm text-outline">Hub: Frankfurt / Zurich GDPR Vault</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">
+              7,420 <span class="text-label-sm font-label-sm text-outline font-normal">assessments</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">94.6%</span>
+<div class="w-16 bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 94.6%;"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md font-medium text-on-surface">
+              21m <span class="text-label-sm font-label-sm text-[#B7791F]">(Monitored)</span>
+</td>
+<td class="py-space-md px-space-md">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">18.2% of total</span>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#DEF7EC] text-[#21865B] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#21865B]"></span>
+                Operational
+              </span>
+</td>
+</tr>
+<!-- Row 4: Explicit "No Data Yet" State for Asia Pacific Pilot -->
+<tr class="bg-surface-container-low/40">
+<td class="py-space-md px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-outline font-semibold text-label-sm">APAC</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Asia Pacific (Sub-hub 3 - Pilot)</span>
+<span class="text-label-sm font-label-sm text-outline">Hub: Singapore / Tokyo Relay</span>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md" colspan="4">
+<div class="flex items-center gap-space-xs text-on-surface-variant bg-surface-container-lowest px-space-md py-2 rounded-lg">
+<span class="material-symbols-outlined text-outline text-[18px]">cloud_sync</span>
+<span class="text-label-sm font-label-sm text-outline font-medium">
+                  Telemetry awaiting cohort activation scheduled for Q1. No patient encounters or clinician reviews recorded.
+                </span>
+</div>
+</td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container text-outline font-semibold">
+                No data yet
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Clinical Quality Context & Administrative Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md p-space-md rounded-lg bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[16px]">lock</span>
+<span>Confidential - Operational &amp; Quality Assurance Committee Access Only.</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span>All timestamps UTC</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="font-mono text-outline">Audit Log ID: #AUD-8829-PX</span>
+</div>
+</div>
+</div></main></div></body></html>
